@@ -58,7 +58,7 @@ def sudoku_megold(matrix):
 # Függvények meghívása
 #Mátrix kiiratás
 def matrixKiir(matrix):
-  fol sor in matrix:
+  for sor in matrix:
     print("".join(map(str,sor)))
 
 
