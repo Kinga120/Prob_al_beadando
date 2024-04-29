@@ -56,3 +56,18 @@ def sudoku_megold(matrix):
 #<-------------------------------------------->
 #Eredmény kiiratás
 # Függvények meghívása
+#Mátrix kiiratás
+def matrixKiir(matrix):
+  fol sor in matrix:
+    print("".join(map(str,sor)))
+
+
+
+print("A megoldandó Sudoku:")
+print(matrixKiir(megoldandoMatrix))
+
+if sudoku_megold(megoldandoMatrix):
+  print("A Sudoku helyes megoldása:")
+  matrixKiir(megoldandoMatrix)
+else:
+  print("A sudokunak nincs megoldása:")
