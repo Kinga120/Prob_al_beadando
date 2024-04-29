@@ -28,6 +28,15 @@ def valid(matrix, sor, oszlop, szam):
         for i in range(len(matrix)):
             if matrix[i][len(matrix) - 1 - i] == szam:
                 return False
+
+    # 3x2-es méretű blokk ellenörzése, mivel nem csak a sor és oszlopban szerepelhet 6 különböző szám
+    start_sor, start_oszlop = 2 * (sor // 2), 3 * (oszlop // 3)
+    for i in range(start_sor, start_sor + 2):
+        for j in range(start_oszlop, start_oszlop + 3):
+            if matrix[i][j] == szam:
+                return False
+
+    return True
 #<-------------------------------------------->
 # Rekurzió, vizsgálat, megoldás
 
