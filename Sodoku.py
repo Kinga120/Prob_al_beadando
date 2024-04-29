@@ -39,7 +39,19 @@ def valid(matrix, sor, oszlop, szam):
     return True
 #<-------------------------------------------->
 # Rekurzió, vizsgálat, megoldás
-
+def sudoku_megold(matrix):
+    # Minden sorra és oszlopra
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            if matrix[i][j] == 0:
+                for szam in range(1, 7):
+                    if valid(matrix, i, j, szam):
+                        matrix[i][j] = szam
+                        if sudoku_megold(matrix):
+                            return True
+                        matrix[i][j] = 0
+                return False
+    return True
 
 #<-------------------------------------------->
 #Eredmény kiiratás
